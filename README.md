@@ -9,6 +9,6 @@
         	const double	LI,		//total light intensity
 		const double	Dop,		//degree of polarization
 		const double	Aop,		//angle of polarization
-		int * OriginalLI,		//original light intensity in different polarization directions
+		double * OriginalLI,		//original light intensity in different polarization directions
 		double k                        //Scale parameter
 	)
