@@ -3,7 +3,7 @@ void CameraOriginalLightIntensite(
 	const double	LI,			//total light intensity    
 	const double	Dop,		//degree of polarization 
 	const double	Aop,		//angle of polarization 
-	int * OriginalLI,			//original light intensity in different polarization directions
+	double* OriginalLI,			//original light intensity in different polarization directions
 	double k                    //Scale parameter
 	){
 	double Q = Dop*LI*cos(2 * Aop);
@@ -17,16 +17,10 @@ void CameraOriginalLightIntensite(
 	double cameraOLI[4][1] = { 0.0, 0.0, 0.0, 0.0 };
 	MatrixMultiply(4, 3, 1, Stokes2IntensityM[0], Stokes[0], cameraOLI[0]);
 
-	OriginalLI[0] = int(cameraOLI[0][0] * k);//LI0
-	OriginalLI[1] = int(cameraOLI[1][0] * k);//LI45
-	OriginalLI[2] = int(cameraOLI[2][0] * k);//LI90
-	OriginalLI[3] = int(cameraOLI[3][0] * k);//LI135
-
-	for (int i = 0; i <= 3; i++){
-		if (OriginalLI[i] > 255){
-			OriginalLI[i] = 255;
-		}
-	}
+	OriginalLI[0] = cameraOLI[0][0] * k;//LI0
+	OriginalLI[1] = cameraOLI[1][0] * k;//LI45
+	OriginalLI[2] = cameraOLI[2][0] * k;//LI90
+	OriginalLI[3] = cameraOLI[3][0] * k;//LI135
 }
 
 //Matrix multiplication   c=a*b where a[m][p] b[p][n] c[m][n]
