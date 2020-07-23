@@ -1,6 +1,6 @@
 # OriginalLightItensity
 
-## *A C++ function of our manuscript "Polarized skylight navigation simulation data set" by Huaju Liang and Hongyang Bai.*
+## *A C++ function of our manuscript "Polarized skylight navigation simulation dataset" by Huaju Liang and Hongyang Bai.*
 
 
 //Original light intensity is obtained from LI, DOP and AOP
